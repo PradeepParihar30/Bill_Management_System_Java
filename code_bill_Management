@@ -1,0 +1,338 @@
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+/**
+ * BillManagementSystem
+ */
+public class BillManagementSystem extends JFrame {
+    JLabel l1, l2, dosaLabel, CookiesLabel, TeaLabel, CoffeeLabel, JuiceLabel, PancakeLabel, EggLabel, Bill, d1, d2,
+            d3, d4, d5, d6, d7, lb1_total, entry_total;
+    Font f1;
+    JButton btnReset, btnTotal, btnPay;
+    JTextField entry_dosa, entry_cookies, entry_tea, entry_coffee, entry_juice, entry_pancake, entry_egg;
+    int c1, c2, c3, c4, c5, c6, c7;
+
+    BillManagementSystem() {
+
+        l1 = new JLabel("BILL MANAGEMENT SYSTEM");
+        l1.setBounds(250, 0, 435, 30);
+        f1 = new Font("Arial", Font.BOLD, 30);
+        l1.setFont(f1);
+        l1.setBackground(Color.BLACK);
+        l1.setForeground(Color.WHITE);
+        l1.setOpaque(true);
+        add(l1);
+
+        /* Menu text */
+        l2 = new JLabel("Menu");
+        l2.setFont(new Font("Gabriola", Font.BOLD, 40));
+        l2.setForeground(Color.BLACK);
+        l2.setBackground(new Color(144, 238, 144));
+        l2.setBounds(100, 30, 300, 80);
+        add(l2);
+
+        /* label under menu */
+        dosaLabel = new JLabel("Dosa.......Rs.60/plate");
+        dosaLabel.setFont(new Font("Lucida calligraphy", Font.BOLD, 15));
+        dosaLabel.setForeground(Color.BLACK);
+        dosaLabel.setBackground(new Color(144, 238, 144));
+        dosaLabel.setBounds(20, 110, 300, 30);
+        add(dosaLabel);
+
+        CookiesLabel = new JLabel("Cookies.......Rs.30/pic");
+        CookiesLabel.setFont(new Font("Lucida calligraphy", Font.BOLD, 15));
+        CookiesLabel.setForeground(Color.BLACK);
+        CookiesLabel.setBackground(new Color(144, 238, 144));
+        CookiesLabel.setBounds(20, 150, 300, 30);
+        add(CookiesLabel);
+
+        TeaLabel = new JLabel("Tea.......Rs.7/cup");
+        TeaLabel.setFont(new Font("Lucida calligraphy", Font.BOLD, 15));
+        TeaLabel.setForeground(Color.BLACK);
+        TeaLabel.setBackground(new Color(144, 238, 144));
+        TeaLabel.setBounds(20, 190, 300, 30);
+        add(TeaLabel);
+
+        CoffeeLabel = new JLabel("Coffee.......Rs.10/cup");
+        CoffeeLabel.setFont(new Font("Lucida calligraphy", Font.BOLD, 15));
+        CoffeeLabel.setForeground(Color.BLACK);
+        CoffeeLabel.setBackground(new Color(144, 238, 144));
+        CoffeeLabel.setBounds(20, 230, 300, 30);
+        add(CoffeeLabel);
+
+        JuiceLabel = new JLabel("Juice......Rs.20/glass");
+        JuiceLabel.setFont(new Font("Lucida calligraphy", Font.BOLD, 15));
+        JuiceLabel.setForeground(Color.BLACK);
+        JuiceLabel.setBackground(new Color(144, 238, 144));
+        JuiceLabel.setBounds(20, 270, 300, 30);
+        add(JuiceLabel);
+
+        PancakeLabel = new JLabel("Pancake.......Rs.15/pack");
+        PancakeLabel.setFont(new Font("Lucida calligraphy", Font.BOLD, 15));
+        PancakeLabel.setForeground(Color.BLACK);
+        PancakeLabel.setBackground(new Color(144, 238, 144));
+        PancakeLabel.setBounds(20, 310, 300, 30);
+        add(PancakeLabel);
+
+        EggLabel = new JLabel("Egg.......Rs.7/egg");
+        EggLabel.setFont(new Font("Lucida calligraphy", Font.BOLD, 15));
+        EggLabel.setForeground(Color.BLACK);
+        EggLabel.setBackground(new Color(144, 238, 144));
+        EggLabel.setBounds(20, 350, 300, 30);
+        add(EggLabel);
+
+        /* menu background green color */
+        JPanel f = new JPanel();
+        f.setBackground(new Color(144, 238, 144));
+        f.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+        f.setBounds(10, 80, 280, 370);
+        add(f);
+
+        d1 = new JLabel("Dosa");
+        d1.setBounds(320, 110, 300, 40);
+        f1 = new Font("Arial", Font.BOLD, 20);
+        d1.setFont(f1);
+        d1.setForeground(Color.BLUE);
+        d1.setOpaque(true);
+        add(d1);
+
+        d2 = new JLabel("Cookies");
+        d2.setBounds(320, 150, 300, 30);
+        f1 = new Font("Arial", Font.BOLD, 20);
+        d2.setFont(f1);
+        d2.setForeground(Color.BLUE);
+        d2.setOpaque(true);
+        add(d2);
+
+        d3 = new JLabel("Tea");
+        d3.setBounds(320, 190, 300, 30);
+        f1 = new Font("Arial", Font.BOLD, 20);
+        d3.setFont(f1);
+        d3.setForeground(Color.BLUE);
+        d3.setOpaque(true);
+        add(d3);
+
+        d4 = new JLabel("Coffee");
+        d4.setBounds(320, 230, 300, 30);
+        f1 = new Font("Arial", Font.BOLD, 20);
+        d4.setFont(f1);
+        d4.setForeground(Color.BLUE);
+        d4.setOpaque(true);
+        add(d4);
+
+        d5 = new JLabel("Juice");
+        d5.setBounds(320, 270, 300, 30);
+        f1 = new Font("Arial", Font.BOLD, 20);
+        d5.setFont(f1);
+        d5.setForeground(Color.BLUE);
+        d5.setOpaque(true);
+        add(d5);
+
+        d6 = new JLabel("Pancake");
+        d6.setBounds(320, 310, 300, 30);
+        f1 = new Font("Arial", Font.BOLD, 20);
+        d6.setFont(f1);
+        d6.setForeground(Color.BLUE);
+        d6.setOpaque(true);
+        add(d6);
+
+        d7 = new JLabel("Egg");
+        d7.setBounds(320, 350, 300, 30);
+        f1 = new Font("Arial", Font.BOLD, 20);
+        d7.setFont(f1);
+        d7.setForeground(Color.BLUE);
+        d7.setOpaque(true);
+        add(d7);
+
+        lb1_total = new JLabel("Total");
+        lb1_total.setFont(new Font("aria", Font.BOLD, 25));
+        lb1_total.setForeground(Color.BLACK);
+        lb1_total.setBounds(800, 100, 200, 30);
+        add(lb1_total);
+
+        entry_total = new JLabel("Total");
+        entry_total.setFont(new Font("aria", Font.BOLD, 30));
+        entry_total.setText("Rs. " + String.format("%.2f", (double) (c1 + c2 + c3 + c4 + c5 + c6 + c7)));
+        entry_total.setBounds(780, 170, 200, 30);
+        add(entry_total);
+
+        btnPay = new JButton("PAY");
+        btnPay.setBounds(760, 400, 140, 40);
+        btnPay.setFont(new Font("ariel", Font.BOLD, 16));
+        btnPay.setForeground(Color.BLACK);
+        btnPay.setBackground(new Color(173, 216, 230));
+        add(btnPay);
+        btnPay.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                pay();
+            }
+        });
+
+        JPanel f2 = new JPanel();
+        f2.setBackground(new Color(255, 255, 204));
+        f2.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+        f2.setBounds(675, 80, 300, 370);
+        add(f2);
+
+        Bill = new JLabel("Bill");
+        Bill.setFont(new Font("Gabriola", Font.BOLD, 40));
+        Bill.setForeground(Color.BLACK);
+        Bill.setBounds(810, 35, 300, 80);
+        add(Bill);
+
+        btnReset = new JButton("Reset");
+        btnReset.setBounds(320, 410, 140, 40);
+        btnReset.setFont(new Font("ariel", Font.BOLD, 16));
+        btnReset.setForeground(Color.BLACK);
+        btnReset.setBackground(new Color(173, 216, 230));
+        add(btnReset);
+        btnReset.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Reset();
+            }
+        });
+
+        btnTotal = new JButton("Total");
+        btnTotal.setBounds(490, 410, 140, 40);
+        btnTotal.setFont(new Font("ariel", Font.BOLD, 16));
+        btnTotal.setForeground(Color.BLACK);
+        btnTotal.setBackground(new Color(173, 216, 230));
+        add(btnTotal);
+        btnTotal.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Total();
+            }
+        });
+
+        entry_dosa = new JTextField("");
+        entry_dosa.setBounds(470, 110, 140, 30);
+        add(entry_dosa);
+
+        entry_cookies = new JTextField("");
+        entry_cookies.setBounds(470, 150, 140, 30);
+        add(entry_cookies);
+
+        entry_tea = new JTextField("");
+        entry_tea.setBounds(470, 190, 140, 30);
+        add(entry_tea);
+
+        entry_coffee = new JTextField("");
+        entry_coffee.setBounds(470, 230, 140, 30);
+        add(entry_coffee);
+
+        entry_juice = new JTextField("");
+        entry_juice.setBounds(470, 270, 140, 30);
+        add(entry_juice);
+
+        entry_pancake = new JTextField("");
+        entry_pancake.setBounds(470, 310, 140, 30);
+        add(entry_pancake);
+
+        entry_egg = new JTextField("");
+        entry_egg.setBounds(470, 350, 140, 30);
+        add(entry_egg);
+
+        setLayout(null);
+        setTitle("Bill Management System");
+        setSize(1000, 500);
+        setVisible(true);
+        setResizable(false);
+    }
+
+    public void Reset() {
+        // Reset implementation
+        entry_dosa.setText("");
+        entry_cookies.setText("");
+        entry_tea.setText("");
+        entry_coffee.setText("");
+        entry_juice.setText("");
+        entry_pancake.setText("");
+        entry_egg.setText("");
+        entry_total.setText("Rs. 0.00");
+    }
+
+    public void Total() {
+        // Total implementation
+        int a1, a2, a3, a4, a5, a6, a7;
+
+        try {
+            a1 = Integer.parseInt(entry_dosa.getText());
+        } catch (NumberFormatException e) {
+            a1 = 0;
+        }
+
+        try {
+            a2 = Integer.parseInt(entry_cookies.getText());
+        } catch (NumberFormatException e) {
+            a2 = 0;
+        }
+
+        try {
+            a3 = Integer.parseInt(entry_tea.getText());
+        } catch (NumberFormatException e) {
+            a3 = 0;
+        }
+
+        try {
+            a4 = Integer.parseInt(entry_coffee.getText());
+        } catch (NumberFormatException e) {
+            a4 = 0;
+        }
+
+        try {
+            a5 = Integer.parseInt(entry_juice.getText());
+        } catch (NumberFormatException e) {
+            a5 = 0;
+        }
+
+        try {
+            a6 = Integer.parseInt(entry_pancake.getText());
+        } catch (NumberFormatException e) {
+            a6 = 0;
+        }
+
+        try {
+            a7 = Integer.parseInt(entry_egg.getText());
+        } catch (NumberFormatException e) {
+            a7 = 0;
+        }
+
+        // Define cost of each item per quantity
+        int c1 = 60 * a1;
+        int c2 = 30 * a2;
+        int c3 = 7 * a3;
+        int c4 = 10 * a4;
+        int c5 = 20 * a5;
+        int c6 = 15 * a6;
+        int c7 = 7 * a7;
+        double totalCost = c1 + c2 + c3 + c4 + c5 + c6 + c7;
+        entry_total.setText(String.format("Rs. %.2f", totalCost));
+    }
+
+    private static void pay() {
+        // Pay implementation
+        int result = JOptionPane.showConfirmDialog(null, "Would you like to pay online?", "Payment",
+                JOptionPane.YES_NO_OPTION);
+
+        if (result == JOptionPane.YES_OPTION) {
+            JOptionPane.showMessageDialog(null, "UPI = 7977527658@upi", "Payment", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Thanks!! You can pay through cash", "Payment",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    public static void main(String[] args) {
+        new BillManagementSystem();
+    }
+}
